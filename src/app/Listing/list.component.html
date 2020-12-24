@@ -13,7 +13,7 @@
         <div class="col-md-2">
             <app-room_filter [filterName]="filter_Name" (roomClicked)="dataReceiver($event)"></app-room_filter>
 
-            Room Type >> clicked in child Component : {{ roomType }}
+            <!-- Room Type >> clicked in child Component : {{ roomType }} -->
         </div>
         <div *ngIf="hotels && hotels.length else noData">
             <div class="col-md-10">
