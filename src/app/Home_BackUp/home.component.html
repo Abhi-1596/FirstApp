@@ -1,0 +1,10 @@
+<div>
+    <h1>{{ pageTitle }}</h1>
+    <p>{{ description }}</p>
+    <img [src]="imagePath" />
+    <br>
+    <h2>{{ condition?myText_1:myText_2 }}</h2>
+    <button class="btn btn-default" (click)="toggleText()" [ngStyle]="{'color':condition?'green':'red'}">
+        Click Me
+    </button>
+</div>
