@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
     userInput: any;
     hotels: IHotel[];
     roomType;
-    filter_Name = "Abhilash Mishra"
+    filter_Name: string = "Abhilash Mishra";
 
     constructor(
         private route: ActivatedRoute,
