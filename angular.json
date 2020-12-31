@@ -62,7 +62,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "FirstApp:build",
-            "host": "192.168.0.170"
+            // "host": "192.168.0.170"
           },
           "configurations": {
             "production": {
