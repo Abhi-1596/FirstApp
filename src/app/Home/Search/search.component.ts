@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { IHotel } from 'src/app/Listing/hotel.model';
 import { HomeService } from 'src/app/services/home.service';
 import { ICity } from './location.model';
 
@@ -13,9 +14,17 @@ export class SearchComponent implements OnInit {
     
     locations: ICity[];
 
+    hotels: IHotel[];
+
     constructor(private homeService: HomeService) {}
 
     ngOnInit(): void {
       this.homeService.getCity().subscribe((data) => this.locations = data); 
+    }
+
+    selectCity(cityId) {
+      // console.log(cityId);
+      // this.homeService.getHwrtc(cityId).subscribe((data) => {console.log(data)});
+      this.homeService.getHwrtc(cityId).subscribe((data) => this.hotels = data);
     }
 }

@@ -7,13 +7,15 @@
     </div>
 
     <div class="locationSelector">
-        <select class="locationDropDown">
+        <select class="locationDropDown" (change)='selectCity($event.target.value)'>
             <option *ngFor="let loc of locations" [value]="loc.city">
-                {{loc.city_name}}
+                {{ loc.city_name }}
             </option>
         </select>
         <select class="hotelDropDown">
-            <option value="">--------------------Select Option--------------------</option>
+            <option *ngFor="let hotel of hotels" [value]="hotel._id">
+                {{ hotel.name }} | {{ hotel.locality }}
+            </option>
         </select>
     </div>
 </div>
