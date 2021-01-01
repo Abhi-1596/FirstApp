@@ -16,7 +16,7 @@ import { ListComponent } from './Listing/list.component';
 import { HomeService } from './services/home.service';
 import { HotelService } from './services/hotel.service';
 import { HotelSearch } from './Pipes/hotel.pipe';
-import { RoomFilterComponent } from './HotelFilter/room_filter.component';
+import { RoomFilterComponent } from './Hotel_Filter/room_filter.component';
 
 @NgModule({
   declarations: [
