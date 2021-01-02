@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{ details[0].name }}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col col-md-12">
+                <img [src]="details[0].thumb" alt="hotel_image" width="100%" height="400px" class="img-rounded">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <h4>Address - {{ details[0].address }}, {{ details[0].city_name }}</h4>
+                <h4>Cost - {{ details[0].cost | currency: 'INR'}}</h4>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-warning" (click)="onBack()">Back</button>
+    </div>
+</div>

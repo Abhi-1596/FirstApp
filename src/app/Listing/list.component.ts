@@ -9,7 +9,7 @@ import { IHotel } from './hotel.model';
 })
 
 export class ListComponent implements OnInit {
-    id!: number;
+    id: string;
     userInput: any;
     hotels: IHotel[];
     roomType;
@@ -22,7 +22,7 @@ export class ListComponent implements OnInit {
 
     ngOnInit() {
         this.id = this.route.snapshot.params['id'];
-        
+        sessionStorage.setItem('tripId', this.id);
         this.hotelService.getHotel(this.id).subscribe((data) => this.hotels = data);
     }
 

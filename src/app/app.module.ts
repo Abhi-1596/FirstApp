@@ -17,6 +17,8 @@ import { HomeService } from './services/home.service';
 import { HotelService } from './services/hotel.service';
 import { HotelSearch } from './Pipes/hotel.pipe';
 import { RoomFilterComponent } from './Hotel_Filter/room_filter.component';
+import { DetailPageService } from './services/detail_pages.service';
+import { DetailsComponent } from './Hotel_DetailPage/details.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +32,14 @@ import { RoomFilterComponent } from './Hotel_Filter/room_filter.component';
     MyTextCasePipe,
     DiscountPipe,
     HotelSearch,
-    RoomFilterComponent
+    RoomFilterComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot ([
       {path: 'listing/:id', component: ListComponent},
+      {path: 'details_Page/:id', component: DetailsComponent},
       {path: 'home', component: HomeComponent},
       {path: '', component: HomeComponent}
     ]),
@@ -44,7 +48,8 @@ import { RoomFilterComponent } from './Hotel_Filter/room_filter.component';
   ],
   providers: [
     HomeService,
-    HotelService
+    HotelService,
+    DetailPageService
   ],
   bootstrap: [AppComponent]
 })

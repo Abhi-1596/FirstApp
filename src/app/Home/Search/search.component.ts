@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router';
 import { IHotel } from 'src/app/Listing/hotel.model';
+import { DetailPageService } from 'src/app/services/detail_pages.service';
 import { HomeService } from 'src/app/services/home.service';
 import { ICity } from './location.model';
 
@@ -16,7 +18,8 @@ export class SearchComponent implements OnInit {
 
     hotels: IHotel[];
 
-    constructor(private homeService: HomeService) {}
+    constructor(private homeService: HomeService,
+                private router: Router) {}
 
     ngOnInit(): void {
       this.homeService.getCity().subscribe((data) => this.locations = data); 
@@ -26,5 +29,9 @@ export class SearchComponent implements OnInit {
       // console.log(cityId);
       // this.homeService.getHwrtc(cityId).subscribe((data) => {console.log(data)});
       this.homeService.getHwrtc(cityId).subscribe((data) => this.hotels = data);
+    }
+
+    selectHotel(hotelId) {
+      this.router.navigate(['/details_Page', hotelId]);
     }
 }

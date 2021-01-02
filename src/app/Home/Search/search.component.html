@@ -12,7 +12,7 @@
                 {{ loc.city_name }}
             </option>
         </select>
-        <select class="hotelDropDown">
+        <select class="hotelDropDown" (change)='selectHotel($event.target.value)'>
             <option *ngFor="let hotel of hotels" [value]="hotel._id">
                 {{ hotel.name }} | {{ hotel.locality }}
             </option>

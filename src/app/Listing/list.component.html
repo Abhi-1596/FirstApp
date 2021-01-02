@@ -28,7 +28,9 @@
                                         </div>
                                         <div class="col-md-7">
                                             <div class="hotel_name">
-                                                <a>{{ hotel.name }}</a>
+                                                <span>
+                                                    <a [routerLink]="['/details_Page', hotel._id]">{{ hotel.name }}</a>
+                                                </span>
                                                 <div class="city-name">{{ hotel.city_name }}</div>
                                                 <div class="address-text">{{ hotel.locality }}</div>
                                                 <div class="address-text">{{ hotel.address }}</div>
