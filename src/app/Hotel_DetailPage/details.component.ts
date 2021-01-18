@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { IHotel } from "../Listing/hotel.model";
 import { DetailPageService } from "../services/detail_pages.service";
 
 @Component({
@@ -10,7 +9,7 @@ import { DetailPageService } from "../services/detail_pages.service";
 export class DetailsComponent implements OnInit {
     tripId: string = sessionStorage.getItem('tripId');
     id;
-    details;
+    details: any[];
 
     constructor(private router: Router,
                 private detailService: DetailPageService,
